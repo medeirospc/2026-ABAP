@@ -1,0 +1,22 @@
+REPORT z_modulo5_ex1.
+
+DATA: lv_matnr TYPE mara-matnr,
+	  lv_maktx TYPE makt-maktx.
+		
+	PARAMETERS: p_matnr TYPE mara-matnr DEFAULT 'TG0011'.
+	
+	START-OF-SELECTION.
+	
+		SELECT SINGLE matnr FROM mara INTO lv_matnr
+			WHERE matnr = p_matnr.
+			
+			IF sy-subrc = 0.
+			SELECT SINGLE maktx FROM makt INTO lv_maktx
+				WHERE matnr = lv_matnr
+					AND spras = sy_langu.
+					
+			WRITE: 	/ 'Material:', lv_matnr,
+					/ 'Descri~ção:', lv_maktx.
+			ELSE.
+				WRITE:	/ 'Material não encontrado'.
+			ENDIF.
