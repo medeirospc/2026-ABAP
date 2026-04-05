@@ -16,7 +16,7 @@ DATA: lv_matnr TYPE mara-matnr,
 					AND spras = sy_langu.
 					
 			WRITE: 	/ 'Material:', lv_matnr,
-					/ 'Descri~ção:', lv_maktx.
+					/ 'Descrição:', lv_maktx.
 			ELSE.
 				WRITE:	/ 'Material não encontrado'.
 			ENDIF.
