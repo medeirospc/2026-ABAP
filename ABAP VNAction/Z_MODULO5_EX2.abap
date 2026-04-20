@@ -1,4 +1,4 @@
-REPORT z_modulo05_ex2.
+REPORT z_modulo5_ex2.
 
 DATA: lt_scarr TYPE TABLE OF scarr,
 	  ls_scarr TYPE scarr.
