@@ -5,7 +5,7 @@
 *&---------------------------------------------------------------------*
 
 * INSERT (Insere na última linha, usar quando tem certeza que o registro
-* não existe, senão duplica)
+* não existe, senão duplica).
 
 REPORT Z_MODULO5_EX6.
 
@@ -22,3 +22,9 @@ SELECT *
   FROM scarr
   INTO TABLE lt_scarr
   WHERE carrid = 'Z2'.
+
+*Imprimindo na tela.
+LOOP AT lt_scarr INTO ls_scarr.
+  WRITE: 'A nova companhia inserida é a ' , ls_scarr-carrid , '-' , ls_scarr-carrname.
+  SKIP.
+ENDLOOP.
